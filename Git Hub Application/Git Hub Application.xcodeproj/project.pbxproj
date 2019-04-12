@@ -55,13 +55,29 @@
 			isa = PBXGroup;
 			children = (
 				75405E4F2260E34C00D33EB2 /* AppDelegate.swift */,
-				75405E512260E34C00D33EB2 /* ViewController.swift */,
-				75405E532260E34C00D33EB2 /* Main.storyboard */,
 				75405E562260E34E00D33EB2 /* Assets.xcassets */,
-				75405E582260E34E00D33EB2 /* LaunchScreen.storyboard */,
 				75405E5B2260E34E00D33EB2 /* Info.plist */,
+				75405E622260E46800D33EB2 /* Storyboards */,
+				75405E612260E45700D33EB2 /* ViewControllers */,
 			);
 			path = "Git Hub Application";
+			sourceTree = "<group>";
+		};
+		75405E612260E45700D33EB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75405E512260E34C00D33EB2 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75405E622260E46800D33EB2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				75405E532260E34C00D33EB2 /* Main.storyboard */,
+				75405E582260E34E00D33EB2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
