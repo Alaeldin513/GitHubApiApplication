@@ -13,6 +13,8 @@
 		75405E572260E34E00D33EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75405E562260E34E00D33EB2 /* Assets.xcassets */; };
 		75405E5A2260E34E00D33EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75405E582260E34E00D33EB2 /* LaunchScreen.storyboard */; };
 		75405E652260E5CE00D33EB2 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E642260E5CE00D33EB2 /* WebServiceManager.swift */; };
+		75405E67226112F800D33EB2 /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E66226112F800D33EB2 /* APIEndPoints.swift */; };
+		75405E692261139900D33EB2 /* GithubAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E682261139900D33EB2 /* GithubAPIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		75405E592260E34E00D33EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75405E5B2260E34E00D33EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75405E642260E5CE00D33EB2 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		75405E66226112F800D33EB2 /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		75405E682261139900D33EB2 /* GithubAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				75405E642260E5CE00D33EB2 /* WebServiceManager.swift */,
+				75405E66226112F800D33EB2 /* APIEndPoints.swift */,
+				75405E682261139900D33EB2 /* GithubAPIController.swift */,
 			);
 			path = "Web Services";
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 				75405E522260E34C00D33EB2 /* ViewController.swift in Sources */,
 				75405E502260E34C00D33EB2 /* AppDelegate.swift in Sources */,
 				75405E652260E5CE00D33EB2 /* WebServiceManager.swift in Sources */,
+				75405E692261139900D33EB2 /* GithubAPIController.swift in Sources */,
+				75405E67226112F800D33EB2 /* APIEndPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,24 +7,27 @@
 //
 
 import UIKit
-enum Result<T> {
-    case succes(T)
-    case failure(Error)
-}
+
+typealias JSONDictionary = [String: Any]
 
 enum APIErrors: Error{
     case genericServerError(Int,String)
-    var cod: Int {
+    case invalidJsonResponse
+    
+    var code: Int? {
+        var errorCode: Int? = nil
         switch self {
         case .genericServerError(let statusCode, _):
-            return statusCode
+            errorCode = statusCode
+        default:
+            break
         }
+        return errorCode
     }
 }
 
 class WebServiceManager: NSObject {
     static let shared = WebServiceManager()
-    typealias JSONDictionary = [String: Any]
     
     private override init() {
         super.init()
@@ -87,20 +90,22 @@ class WebServiceManager: NSObject {
     }
     
     func printJSON(data: Data){
-        #if Stage
+        #if DEBUG
         guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
             return
         }
-        if let object = object as? JSONDictionary {
+        if let object = jsonObject as? JSONDictionary {
             guard let newData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else {
                 return
             }
-            guard let String = String(data: newData, encoding: .utf8) else { return}
-        } else if let object = object as? [JSONDictionary] {
+            guard let string = String(data: newData, encoding: .utf8) else { return}
+            print(string)
+        } else if let object = jsonObject as? [JSONDictionary] {
             guard let newData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else {
                 return
             }
-            guard let String = String(data: newData, encoding: .utf8) else { return}
+            guard let string = String(data: newData, encoding: .utf8) else { return}
+            print(string)
         }
         #endif
     }
