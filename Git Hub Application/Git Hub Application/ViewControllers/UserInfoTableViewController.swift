@@ -10,6 +10,7 @@ import UIKit
 
 protocol UserInfoTableViewControllerDelegate: class {
     func didTapCell(segueString: String,_ sender: Any)
+    func updateUserDetails(user: User)
 }
 
 class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableViewDataSource {
@@ -56,14 +57,18 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
         case TableViewIndexPaths.userName.indexPath:
             print("username clicked")
         case TableViewIndexPaths.followers.indexPath:
-            print("username clicked")
+            self.parentViewDelegate.didTapCell(segueString: "segueToFollowers", self)
         case TableViewIndexPaths.following.indexPath:
-            print("username clicked")
+            self.parentViewDelegate.didTapCell(segueString: "segueToFollowing", self)
         case TableViewIndexPaths.repos.indexPath:
             self.parentViewDelegate.didTapCell(segueString: "segueToRepos", self)
             break
         default:
-            print("default")
+            DispatchQueue.main.async {
+                self.user = self.recentSearches[indexPath.row]
+                self.parentViewDelegate.updateUserDetails(user: self.recentSearches[indexPath.row])
+                tableView.reloadData()
+            }
         }
     }
     
@@ -92,41 +97,6 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             return 40
         }
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }
 
 enum TableViewIndexPaths {

@@ -17,6 +17,7 @@ struct User: Codable {
     var gravatarID: String?
     var profileUrl: String?
     var followersAPIUrl: String?
+    var followingAPIUrl: String?
     var reposAPIUrl: String?
     var followers: Int?
     var following: Int?
@@ -35,6 +36,7 @@ struct User: Codable {
         case gravatarID = "gravatar_id"
         case profileUrl = "url"
         case followersAPIUrl = "followers_url"
+        case followingAPIUrl = "following_url"
         case reposAPIUrl = "repos_url"
         case followers = "followers"
         case following = "following"
@@ -58,6 +60,7 @@ extension User {
         self.gravatarID = try container.decodeIfPresent(String.self, forKey: .gravatarID)
         self.profileUrl = try container.decodeIfPresent(String.self, forKey: .profileUrl)
         self.followersAPIUrl = try container.decodeIfPresent(String.self, forKey: .followersAPIUrl)
+        self.followingAPIUrl = try container.decodeIfPresent(String.self, forKey: .followingAPIUrl)
         self.reposAPIUrl = try container.decodeIfPresent(String.self, forKey: .reposAPIUrl)
         self.followers = try container.decodeIfPresent(Int.self, forKey: .followers)
         self.following = try container.decodeIfPresent(Int.self, forKey: .following)
@@ -77,6 +80,7 @@ extension User {
         try container.encodeIfPresent(gravatarID, forKey: .gravatarID)
         try container.encodeIfPresent(profileUrl, forKey: .profileUrl)
         try container.encodeIfPresent(followersAPIUrl, forKey: .followersAPIUrl)
+        try container.encodeIfPresent(followingAPIUrl, forKey: .followingAPIUrl)
         try container.encodeIfPresent(reposAPIUrl, forKey: .reposAPIUrl)
         try container.encodeIfPresent(followers, forKey: .followers)
         try container.encodeIfPresent(following, forKey: .following)

@@ -29,9 +29,7 @@ class UserTableViewCell: UITableViewCell {
     
     func configure(user: User){
         DispatchQueue.main.async { [unowned self] in
-            if let imagedata = user.imageData {
-                self.userImage.image = UIImage(data: imagedata)
-            }
+            self.getUserImage(user: user)
             self.usernameLabel.text = user.login
             self.nameLabel.text = user.name
             self.bioLabel.text = user.bio
@@ -39,6 +37,19 @@ class UserTableViewCell: UITableViewCell {
             self.emailLabel.text = user.email
         }
         
+    }
+    
+    func getUserImage(user: User) {
+        GithubAPIController.getUserImage(imageUrl: user.imageUrl ?? ""){ [unowned self] result in
+            switch result {
+            case .success(let imagedata):
+                DispatchQueue.main.async {
+                    self.userImage.image = UIImage(data: imagedata)
+                }
+            case .failure(_):
+                break
+            }
+        }
     }
     
 }

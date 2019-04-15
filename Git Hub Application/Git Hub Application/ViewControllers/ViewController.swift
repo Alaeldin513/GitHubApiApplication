@@ -9,8 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
-    
-
+  
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var userTableView: UserInfoTableViewController!
     @IBOutlet weak var profileImage: UIImageView!
@@ -22,6 +21,7 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
     let tableViewController = UserInfoTableViewController()
     var user: User?
     var repos: [Repo]!
+    var users: [User]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +38,10 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
         GithubAPIController.getUser(username: searchTextField.text ?? ""){[unowned self] result in
             switch result {
             case .success(let user):
-                self.tableViewController.user = user
-                self.user = user
                 UserDefaults.saveUserSearch(user)
+                self.tableViewController.user = user
+                self.tableViewController.recentSearches = UserDefaults.recentUsers
+                self.user = user
                 DispatchQueue.main.async {
                     self.updateUserInfo(user: user)
                     self.userTableView.reloadData()
@@ -96,9 +97,27 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
                 case .failure(let error):
                     print(error)
                 }
-                
             }
+        } else if segueString == "segueToFollowers" || segueString == "segueToFollowing" {
+            var urlString = segueString == "segueToFollowers" ? user?.followersAPIUrl: user?.followingAPIUrl?.replacingOccurrences(of: "{/other_user}", with: "")
+            GithubAPIController.getListOfUsers(usersUrl: urlString ?? ""){ result in
+                switch result {
+                case .success(let users):
+                    DispatchQueue.main.async {
+                        self.users = users
+                        self.performSegue(withIdentifier: segueString, sender: sender)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
         }
+    }
+    func updateUserDetails(user: User) {
+        self.user = user
+        self.profileImage.isHidden = true
+        self.updateUserInfo(user: user)
     }
     
     // MARK: - Navigation
@@ -107,6 +126,9 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
         if segue.identifier == "segueToRepos" {
             let repoViewController = segue.destination as! RepoInfoTableViewController
             repoViewController.repos = self.repos
+        } else if segue.identifier == "segueToFollowing" || segue.identifier == "segueToFollowers" {
+            let usersViewController  = segue.destination as! UsersViewController
+            usersViewController.users = self.users
         }
     }
     

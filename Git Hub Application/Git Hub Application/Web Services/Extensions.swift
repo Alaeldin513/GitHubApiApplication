@@ -75,7 +75,7 @@ extension UserDefaults {
     }
     
     class func saveUserSearch(_ user: User) {
-        var recent = UserDefaults.recentUsers.filter({$0.id == user.id})
+        var recent = UserDefaults.recentUsers.filter({$0.id != user.id})
         recent.append(user)
         UserDefaults.recentUsers = recent
     }
