@@ -38,11 +38,14 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             cell.cofigure(cellTitle: TableViewIndexPaths.userName.titleText, cellValue: user?.login ?? "")
         case TableViewIndexPaths.followers.indexPath:
             cell.cofigure(cellTitle: TableViewIndexPaths.followers.titleText, cellValue: String(describing: user?.followers ?? 0) )
+            cell.accessoryType = .detailButton
         case TableViewIndexPaths.following.indexPath:
             cell.cofigure(cellTitle: TableViewIndexPaths.following.titleText, cellValue: String(describing: user?.following ?? 0) )
+            cell.accessoryType = .detailButton
         case TableViewIndexPaths.repos.indexPath:
             
             cell.cofigure(cellTitle: TableViewIndexPaths.repos.titleText, cellValue: String(describing: user?.repos ?? 0))
+            cell.accessoryType = .detailButton
         default:
             var userCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
             userCell.configure(user: recentSearches[indexPath.row])

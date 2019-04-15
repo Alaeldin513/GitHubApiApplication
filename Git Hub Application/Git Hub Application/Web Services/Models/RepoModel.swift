@@ -17,6 +17,8 @@ struct Repo: Decodable {
     var forks: Int?
     var stars: Int?
     var lastUpdateDate: Date?
+    var commitUrl: String?
+    var Description: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -26,6 +28,8 @@ struct Repo: Decodable {
         case forks = "forks_count"
         case stars = "stargazers_count"
         case lastUpdateDate = "pushed_at"
+        case commitUrl = "commits_url"
+        case Description = "description"
         
     }
 }
@@ -45,5 +49,7 @@ extension Repo {
         self.stars = try container.decodeIfPresent(Int.self, forKey: .stars)
         let date = try container.decodeIfPresent(String.self, forKey: .lastUpdateDate)
         self.lastUpdateDate = dateFormatter.date(from: date ?? "")
+        self.commitUrl = try container.decodeIfPresent(String.self, forKey: .commitUrl)
+        self.Description = try container.decodeIfPresent(String.self, forKey: .Description)
     }
 }

@@ -23,5 +23,13 @@ class CommitTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(commit: CommitWrapper){
+        DispatchQueue.main.async { [unowned self] in
+            self.commitTitle.text = commit.commit?.messsage
+            self.commitAuthor.text = commit.commit?.author?.name
+            self.commitDate.text = commit.commit?.author?.date?.toString(dateFormat: "MMM d, yyyy")
+        }
+    }
 
 }

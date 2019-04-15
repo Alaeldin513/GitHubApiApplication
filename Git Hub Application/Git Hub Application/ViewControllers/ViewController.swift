@@ -61,24 +61,28 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
             
             if let userName = user.name {
                 self.nameLabel.text = userName
+                self.nameLabel.isHidden = false
             } else {
                 self.nameLabel.isHidden = true
             }
             
             if let bio = user.bio {
                 self.bioLabel.text = "Bio: \(bio)"
+                self.bioLabel.isHidden = false
             } else {
                 self.bioLabel.isHidden = true
             }
             
             if let email = user.email {
                 self.emailLabel.text = "Email: \(email)"
+                self.emailLabel.isHidden = false
             } else {
                 self.emailLabel.isHidden = true
             }
             
             if let location = user.location {
                 self.locationLabel.text = "Location: \(location)"
+                self.locationLabel.isHidden = false
             } else {
                 self.locationLabel.isHidden = true
             }

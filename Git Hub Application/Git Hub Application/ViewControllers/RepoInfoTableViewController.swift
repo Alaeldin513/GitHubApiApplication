@@ -11,6 +11,8 @@ import UIKit
 class RepoInfoTableViewController: UITableViewController {
     
     var repos: [Repo]!
+    var commits: [CommitWrapper]!
+    var selectedRepo: Repo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,40 +40,30 @@ class RepoInfoTableViewController: UITableViewController {
         cell.congfigureWith(repo: repos[indexPath.section])
         return cell
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedRepo = repos[indexPath.section]
+        GithubAPIController.getRepoCommits(commitsUrl: selectedRepo.commitUrl ?? ""){ [unowned self] result in
+            switch result {
+            case .success(let commits):
+                self.commits = commits
+                self.selectedRepo = selectedRepo
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "segueToRepoDetails", sender: self)
+                }
+            case .failure(_):
+                break
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToRepoDetails" {
+            var repodetailsVC = segue.destination as! RepoDetailsViewController
+            repodetailsVC.repo = self.selectedRepo
+            repodetailsVC.commits = self.commits
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
 
 }

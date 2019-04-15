@@ -89,5 +89,24 @@ class GithubAPIController: NSObject {
             WebServiceManager.shared.get(url: url, headerFields: [:], success: success, failure: failure)
         }
     }
+    
+    class func getRepoCommits(commitsUrl: String, completion: @escaping (_ result: Result<[CommitWrapper]>) -> Void) {
+        let url = URL(string: commitsUrl.replacingOccurrences(of: "{/sha}", with: ""))
+        let success: ((Data) -> Void) = { data in
+            do {
+                let commits = try JSONDecoder().decode([CommitWrapper].self, from: data)
+                completion(.success(commits))
+            } catch{
+                completion(.failure(APIErrors.invalidJsonResponse))
+            }
+        }
+        
+        let failure: ((Error) -> Void) = { error in
+            completion(.failure(error))
+        }
+        if let url = url {
+            WebServiceManager.shared.get(url: url, headerFields: [:], success: success, failure: failure)
+        }
+    }
 }
 
