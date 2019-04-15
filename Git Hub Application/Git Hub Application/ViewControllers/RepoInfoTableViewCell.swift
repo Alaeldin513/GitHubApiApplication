@@ -29,8 +29,8 @@ class RepoInfoTableViewCell: UITableViewCell {
     func congfigureWith(repo: Repo) {
         repoName.text = repo.name
         repoLanguage.text = repo.language
-        repoStars.text = "\(repo.stars ?? 0)"
-        repoForks.text = "\(repo.forks ?? 0)"
+        repoStars.text = "Stars: \(repo.stars ?? 0)"
+        repoForks.text = "Forks: \(repo.forks ?? 0)"
         repoLastUpdatedDate.text = repo.lastUpdateDate?.toString(dateFormat: "MMM d, yyyy")
     }
 

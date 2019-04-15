@@ -15,8 +15,16 @@ class GithubAPIController: NSObject {
         
         let success: ((Data) -> Void) = { data in
             do {
-                let user = try JSONDecoder().decode(User.self, from: data)
-                completion(.success(user))
+                var user = try JSONDecoder().decode(User.self, from: data)
+                getUserImage(imageUrl: user.imageUrl ?? ""){ result in
+                    switch result{
+                    case .success(let imageData):
+                        user.imageData = imageData
+                    case .failure(_):
+                        break
+                    }
+                    completion(.success(user))
+                }
             } catch{
                 completion(.failure(APIErrors.invalidJsonResponse))
             }
@@ -30,6 +38,19 @@ class GithubAPIController: NSObject {
         }
     }
     
+    class func getUserImage(imageUrl: String, completion: @escaping (_ result: Result<Data>) -> Void) {
+        let url = URL(string: imageUrl)
+        let success: ((Data) -> Void) = { data in
+            completion(.success(data))
+        }
+        
+        let failure: ((Error) -> Void) = { error in
+            completion(.failure(error))
+        }
+        if let url = url {
+            WebServiceManager.shared.get(url: url, headerFields: [:], success: success, failure: failure)
+        }
+    }
     class func getRepos(repoUrl: String, completion: @escaping (_ result: Result<[Repo]>) -> Void) {
         let url = URL(string: repoUrl)
         let success: ((Data) -> Void) = { data in

@@ -16,21 +16,22 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
     
     var user: User?
     var parentViewDelegate: UserInfoTableViewControllerDelegate!
+    var recentSearches = UserDefaults.recentUsers
     
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return section == 0 ? 4:recentSearches.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelInfoCell", for: indexPath) as! SimpleLabelCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "LabelInfoCell", for: indexPath) as! SimpleLabelCell
         switch indexPath {
         case TableViewIndexPaths.userName.indexPath:
             cell.cofigure(cellTitle: TableViewIndexPaths.userName.titleText, cellValue: user?.login ?? "")
@@ -42,7 +43,9 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             
             cell.cofigure(cellTitle: TableViewIndexPaths.repos.titleText, cellValue: String(describing: user?.repos ?? 0))
         default:
-            break
+            var userCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
+            userCell.configure(user: recentSearches[indexPath.row])
+            return userCell
         }
 
         return cell
@@ -63,7 +66,32 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             print("default")
         }
     }
-
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 10, width: tableView.frame.width, height: 30))
+            headerView.backgroundColor = UIColor(red: 36/255, green: 41/255, blue: 46/255, alpha: 1)
+            let label = UILabel()
+            label.frame = CGRect.init(x: 10, y: 10, width: headerView.frame.width-10, height: headerView.frame.height-10)
+            label.text = "Recent Searches"
+            label.textColor = UIColor(red: 163/255, green: 211/255, blue: 112/255, alpha: 1)
+            headerView.addSubview(label)
+            label.backgroundColor = .clear
+            label.font = UIFont.boldSystemFont(ofSize: 20)
+            return headerView
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        default:
+            return 40
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

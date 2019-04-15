@@ -16,24 +16,26 @@ class RepoInfoTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.delegate = self
+        tableView.backgroundView = nil
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return repos.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return repos.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repoInfoCell", for: indexPath) as! RepoInfoTableViewCell
-        cell.congfigureWith(repo: repos[indexPath.row])
+        cell.congfigureWith(repo: repos[indexPath.section])
         return cell
     }
     /*

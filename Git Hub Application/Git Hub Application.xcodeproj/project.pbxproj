@@ -16,12 +16,15 @@
 		75405E67226112F800D33EB2 /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E66226112F800D33EB2 /* APIEndPoints.swift */; };
 		75405E692261139900D33EB2 /* GithubAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E682261139900D33EB2 /* GithubAPIController.swift */; };
 		75405E6B22612E7600D33EB2 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E6A22612E7600D33EB2 /* UserInfoTableViewController.swift */; };
-		75405E6D2261332400D33EB2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E6C2261332400D33EB2 /* UserInfoTableViewCell.swift */; };
+		75405E6D2261332400D33EB2 /* SimpleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E6C2261332400D33EB2 /* SimpleLabelCell.swift */; };
 		75405E6F2261526B00D33EB2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E6E2261526B00D33EB2 /* UserModel.swift */; };
 		75405E722261529C00D33EB2 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E712261529C00D33EB2 /* RepoModel.swift */; };
 		75405E7422615CB700D33EB2 /* RepoInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E7322615CB700D33EB2 /* RepoInfoTableViewController.swift */; };
 		75405E76226233AA00D33EB2 /* RepoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E75226233AA00D33EB2 /* RepoInfoTableViewCell.swift */; };
 		75405E782262433600D33EB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E772262433600D33EB2 /* Extensions.swift */; };
+		75405E7C2263FDB300D33EB2 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E7B2263FDB300D33EB2 /* UsersViewController.swift */; };
+		75405E7F22640F0D00D33EB2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */; };
+		75405E8022640F0D00D33EB2 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75405E7E22640F0D00D33EB2 /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +39,15 @@
 		75405E66226112F800D33EB2 /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
 		75405E682261139900D33EB2 /* GithubAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIController.swift; sourceTree = "<group>"; };
 		75405E6A22612E7600D33EB2 /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
-		75405E6C2261332400D33EB2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		75405E6C2261332400D33EB2 /* SimpleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabelCell.swift; sourceTree = "<group>"; };
 		75405E6E2261526B00D33EB2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		75405E712261529C00D33EB2 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
 		75405E7322615CB700D33EB2 /* RepoInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoTableViewController.swift; sourceTree = "<group>"; };
 		75405E75226233AA00D33EB2 /* RepoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		75405E772262433600D33EB2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		75405E7B2263FDB300D33EB2 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		75405E7E22640F0D00D33EB2 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,10 @@
 				75405E512260E34C00D33EB2 /* ViewController.swift */,
 				75405E6A22612E7600D33EB2 /* UserInfoTableViewController.swift */,
 				75405E7322615CB700D33EB2 /* RepoInfoTableViewController.swift */,
-				75405E6C2261332400D33EB2 /* UserInfoTableViewCell.swift */,
+				75405E6C2261332400D33EB2 /* SimpleLabelCell.swift */,
+				75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */,
 				75405E75226233AA00D33EB2 /* RepoInfoTableViewCell.swift */,
+				75405E7B2263FDB300D33EB2 /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -101,6 +109,7 @@
 			children = (
 				75405E532260E34C00D33EB2 /* Main.storyboard */,
 				75405E582260E34E00D33EB2 /* LaunchScreen.storyboard */,
+				75405E7E22640F0D00D33EB2 /* UserTableViewCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75405E8022640F0D00D33EB2 /* UserTableViewCell.xib in Resources */,
 				75405E5A2260E34E00D33EB2 /* LaunchScreen.storyboard in Resources */,
 				75405E572260E34E00D33EB2 /* Assets.xcassets in Resources */,
 				75405E552260E34C00D33EB2 /* Main.storyboard in Resources */,
@@ -199,10 +209,12 @@
 			files = (
 				75405E522260E34C00D33EB2 /* ViewController.swift in Sources */,
 				75405E782262433600D33EB2 /* Extensions.swift in Sources */,
+				75405E7F22640F0D00D33EB2 /* UserTableViewCell.swift in Sources */,
+				75405E7C2263FDB300D33EB2 /* UsersViewController.swift in Sources */,
 				75405E502260E34C00D33EB2 /* AppDelegate.swift in Sources */,
 				75405E6F2261526B00D33EB2 /* UserModel.swift in Sources */,
 				75405E652260E5CE00D33EB2 /* WebServiceManager.swift in Sources */,
-				75405E6D2261332400D33EB2 /* UserInfoTableViewCell.swift in Sources */,
+				75405E6D2261332400D33EB2 /* SimpleLabelCell.swift in Sources */,
 				75405E722261529C00D33EB2 /* RepoModel.swift in Sources */,
 				75405E692261139900D33EB2 /* GithubAPIController.swift in Sources */,
 				75405E6B22612E7600D33EB2 /* UserInfoTableViewController.swift in Sources */,
