@@ -43,12 +43,11 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             cell.cofigure(cellTitle: TableViewIndexPaths.following.titleText, cellValue: String(describing: user?.following ?? 0) )
             cell.accessoryType = .detailButton
         case TableViewIndexPaths.repos.indexPath:
-            
             cell.cofigure(cellTitle: TableViewIndexPaths.repos.titleText, cellValue: String(describing: user?.repos ?? 0))
             cell.accessoryType = .detailButton
         default:
             var userCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
-            userCell.configure(user: recentSearches[indexPath.row])
+            userCell.configure(user: recentSearches[ recentSearches.count - 1 - indexPath.row])
             return userCell
         }
 
@@ -68,9 +67,13 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             break
         default:
             DispatchQueue.main.async {
-                self.user = self.recentSearches[indexPath.row]
-                self.parentViewDelegate.updateUserDetails(user: self.recentSearches[indexPath.row])
-                tableView.reloadData()
+                var selectedUser = self.recentSearches[self.recentSearches.count - 1 - indexPath.row]
+                self.user = selectedUser
+                self.parentViewDelegate.updateUserDetails(user: selectedUser)
+                tableView.reloadRows(at: [TableViewIndexPaths.followers.indexPath,
+                                          TableViewIndexPaths.following.indexPath,
+                                          TableViewIndexPaths.repos.indexPath,
+                                          TableViewIndexPaths.userName.indexPath], with: .automatic)
             }
         }
     }
@@ -100,6 +103,12 @@ class UserInfoTableViewController: UITableView, UITableViewDelegate, UITableView
             return 40
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    
 }
 
 enum TableViewIndexPaths {

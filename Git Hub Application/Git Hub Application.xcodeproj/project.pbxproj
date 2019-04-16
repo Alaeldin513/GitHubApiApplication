@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75405E502260E34C00D33EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E4F2260E34C00D33EB2 /* AppDelegate.swift */; };
-		75405E522260E34C00D33EB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E512260E34C00D33EB2 /* ViewController.swift */; };
+		75405E522260E34C00D33EB2 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E512260E34C00D33EB2 /* UserSearchViewController.swift */; };
 		75405E552260E34C00D33EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75405E532260E34C00D33EB2 /* Main.storyboard */; };
 		75405E572260E34E00D33EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75405E562260E34E00D33EB2 /* Assets.xcassets */; };
 		75405E5A2260E34E00D33EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75405E582260E34E00D33EB2 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		75405E7C2263FDB300D33EB2 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E7B2263FDB300D33EB2 /* UsersViewController.swift */; };
 		75405E7F22640F0D00D33EB2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */; };
 		75405E8022640F0D00D33EB2 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75405E7E22640F0D00D33EB2 /* UserTableViewCell.xib */; };
-		75405E8222642EC400D33EB2 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E8122642EC400D33EB2 /* RepoDetailsViewController.swift */; };
+		75405E8222642EC400D33EB2 /* CommitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E8122642EC400D33EB2 /* CommitsViewController.swift */; };
 		75405E842264371700D33EB2 /* CommitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E832264371700D33EB2 /* CommitTableViewCell.swift */; };
 		75405E86226438A500D33EB2 /* CommitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405E85226438A500D33EB2 /* CommitModel.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		75405E4C2260E34C00D33EB2 /* Git Hub Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git Hub Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75405E4F2260E34C00D33EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75405E512260E34C00D33EB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		75405E512260E34C00D33EB2 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		75405E542260E34C00D33EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75405E562260E34E00D33EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75405E592260E34E00D33EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		75405E7B2263FDB300D33EB2 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		75405E7E22640F0D00D33EB2 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
-		75405E8122642EC400D33EB2 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		75405E8122642EC400D33EB2 /* CommitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewController.swift; sourceTree = "<group>"; };
 		75405E832264371700D33EB2 /* CommitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitTableViewCell.swift; sourceTree = "<group>"; };
 		75405E85226438A500D33EB2 /* CommitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,14 +99,14 @@
 		75405E612260E45700D33EB2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				75405E512260E34C00D33EB2 /* ViewController.swift */,
+				75405E512260E34C00D33EB2 /* UserSearchViewController.swift */,
 				75405E6A22612E7600D33EB2 /* UserInfoTableViewController.swift */,
 				75405E7322615CB700D33EB2 /* RepoInfoTableViewController.swift */,
 				75405E6C2261332400D33EB2 /* SimpleLabelCell.swift */,
 				75405E7D22640F0D00D33EB2 /* UserTableViewCell.swift */,
 				75405E75226233AA00D33EB2 /* RepoInfoTableViewCell.swift */,
 				75405E7B2263FDB300D33EB2 /* UsersViewController.swift */,
-				75405E8122642EC400D33EB2 /* RepoDetailsViewController.swift */,
+				75405E8122642EC400D33EB2 /* CommitsViewController.swift */,
 				75405E832264371700D33EB2 /* CommitTableViewCell.swift */,
 			);
 			path = ViewControllers;
@@ -217,7 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75405E842264371700D33EB2 /* CommitTableViewCell.swift in Sources */,
-				75405E522260E34C00D33EB2 /* ViewController.swift in Sources */,
+				75405E522260E34C00D33EB2 /* UserSearchViewController.swift in Sources */,
 				75405E782262433600D33EB2 /* Extensions.swift in Sources */,
 				75405E7F22640F0D00D33EB2 /* UserTableViewCell.swift in Sources */,
 				75405E7C2263FDB300D33EB2 /* UsersViewController.swift in Sources */,
@@ -228,7 +228,7 @@
 				75405E722261529C00D33EB2 /* RepoModel.swift in Sources */,
 				75405E692261139900D33EB2 /* GithubAPIController.swift in Sources */,
 				75405E86226438A500D33EB2 /* CommitModel.swift in Sources */,
-				75405E8222642EC400D33EB2 /* RepoDetailsViewController.swift in Sources */,
+				75405E8222642EC400D33EB2 /* CommitsViewController.swift in Sources */,
 				75405E6B22612E7600D33EB2 /* UserInfoTableViewController.swift in Sources */,
 				75405E67226112F800D33EB2 /* APIEndPoints.swift in Sources */,
 				75405E76226233AA00D33EB2 /* RepoInfoTableViewCell.swift in Sources */,

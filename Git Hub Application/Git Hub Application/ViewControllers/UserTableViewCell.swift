@@ -16,9 +16,9 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    var user: User!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,9 +32,6 @@ class UserTableViewCell: UITableViewCell {
             self.getUserImage(user: user)
             self.usernameLabel.text = user.login
             self.nameLabel.text = user.name
-            self.bioLabel.text = user.bio
-            self.locationLabel.text = user.location
-            self.emailLabel.text = user.email
         }
         
     }

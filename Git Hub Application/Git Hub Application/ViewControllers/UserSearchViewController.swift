@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
+class UserSearchViewController: UIViewController, UserInfoTableViewControllerDelegate {
   
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var userTableView: UserInfoTableViewController!
@@ -28,8 +28,10 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
         userTableView.delegate = tableViewController
         userTableView.dataSource = tableViewController
         userTableView.tableFooterView = UIView()
-        tableViewController.parentViewDelegate = self
+        userTableView.rowHeight = UITableView.automaticDimension
+        userTableView.estimatedRowHeight = 50
         userTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
+        tableViewController.parentViewDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -136,5 +138,15 @@ class ViewController: UIViewController, UserInfoTableViewControllerDelegate {
         }
     }
     
+    @IBAction func unwindToMainVc(segue:UIStoryboardSegue) {
+        if let user = self.user {
+            DispatchQueue.main.async { [unowned self] in
+                self.updateUserInfo(user: user)
+                UserDefaults.saveUserSearch(user)
+                self.tableViewController.recentSearches = UserDefaults.recentUsers
+                self.userTableView.reloadData()
+            }
+        }
+    }
 }
 

@@ -12,78 +12,55 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userCell" rowHeight="191" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="Git_Hub_Application" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="421" height="191"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userCell" rowHeight="97" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="Git_Hub_Application" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="421" height="190.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="421" height="96.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="githubProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-LA-sKi">
-                        <rect key="frame" x="36" y="21" width="100" height="100"/>
+                        <rect key="frame" x="36" y="10" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="oLC-rD-nI2"/>
+                            <constraint firstAttribute="width" constant="50" id="oLC-rD-nI2"/>
                             <constraint firstAttribute="width" secondItem="GUU-LA-sKi" secondAttribute="height" multiplier="1:1" id="wUA-0y-0dI"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-ZP-ZEo">
-                        <rect key="frame" x="146" y="21" width="245" height="149"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-s3-MVr" userLabel="Name Label">
-                                <rect key="frame" x="0.0" y="0.0" width="245" height="35"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQI-rE-vQK" userLabel="Name Label">
-                                <rect key="frame" x="0.0" y="43" width="245" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bio:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieB-qy-8YL" userLabel="Bio Label">
-                                <rect key="frame" x="0.0" y="71.5" width="245" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agj-rs-fES" userLabel="Location Label">
-                                <rect key="frame" x="0.0" y="100" width="245" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IT-wZ-leo" userLabel="Email Label">
-                                <rect key="frame" x="0.0" y="128.5" width="245" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-s3-MVr" userLabel="Name Label">
+                        <rect key="frame" x="112" y="10" width="299" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQI-rE-vQK" userLabel="Name Label">
+                        <rect key="frame" x="112" y="31" width="279" height="36"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.14117647059999999" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="jZk-ZP-ZEo" firstAttribute="leading" secondItem="GUU-LA-sKi" secondAttribute="trailing" constant="10" id="9oY-wl-NbL"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="jZk-ZP-ZEo" secondAttribute="bottom" constant="10" id="IUu-Ra-xKz"/>
-                    <constraint firstItem="jZk-ZP-ZEo" firstAttribute="top" secondItem="GUU-LA-sKi" secondAttribute="top" id="c0z-ES-QS8"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="GUU-LA-sKi" secondAttribute="bottom" constant="29" id="fH4-Ti-be6"/>
+                    <constraint firstAttribute="trailing" secondItem="Htw-s3-MVr" secondAttribute="trailing" constant="10" id="6ai-xw-YfO"/>
+                    <constraint firstItem="Htw-s3-MVr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="S8S-Mg-G0H"/>
+                    <constraint firstAttribute="bottom" secondItem="xQI-rE-vQK" secondAttribute="bottom" constant="10" id="St6-pz-7Le"/>
+                    <constraint firstItem="xQI-rE-vQK" firstAttribute="leading" secondItem="GUU-LA-sKi" secondAttribute="trailing" constant="26" id="apX-3R-DmD"/>
+                    <constraint firstItem="Htw-s3-MVr" firstAttribute="leading" secondItem="xQI-rE-vQK" secondAttribute="leading" id="b8M-JC-xah"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="GUU-LA-sKi" secondAttribute="bottom" constant="10" id="fH4-Ti-be6"/>
                     <constraint firstItem="GUU-LA-sKi" firstAttribute="width" secondItem="GUU-LA-sKi" secondAttribute="height" multiplier="1:1" id="jMH-ye-AAa"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="jZk-ZP-ZEo" secondAttribute="trailing" constant="10" id="pcZ-TP-8WS"/>
-                    <constraint firstItem="jZk-ZP-ZEo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="sBb-4l-eKi"/>
+                    <constraint firstItem="xQI-rE-vQK" firstAttribute="top" secondItem="Htw-s3-MVr" secondAttribute="bottom" constant="3" id="nZ8-ic-45x"/>
+                    <constraint firstItem="Htw-s3-MVr" firstAttribute="top" secondItem="GUU-LA-sKi" secondAttribute="top" id="nvH-Lz-OHn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xQI-rE-vQK" secondAttribute="trailing" constant="10" id="pmY-iq-2cL"/>
                     <constraint firstItem="GUU-LA-sKi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="u9a-iD-RFU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="bioLabel" destination="ieB-qy-8YL" id="glq-60-Uod"/>
-                <outlet property="emailLabel" destination="7IT-wZ-leo" id="mL7-pA-i6S"/>
-                <outlet property="locationLabel" destination="Agj-rs-fES" id="oMr-Zj-n8I"/>
                 <outlet property="nameLabel" destination="Htw-s3-MVr" id="jF8-QJ-4H1"/>
                 <outlet property="userImage" destination="GUU-LA-sKi" id="oWx-Nt-PgI"/>
                 <outlet property="usernameLabel" destination="xQI-rE-vQK" id="TmV-HU-Fta"/>
             </connections>
-            <point key="canvasLocation" x="218.40000000000001" y="219.94002998500753"/>
+            <point key="canvasLocation" x="224.80000000000001" y="183.95802098950526"/>
         </tableViewCell>
     </objects>
     <resources>

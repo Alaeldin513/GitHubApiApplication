@@ -19,6 +19,7 @@ class RepoInfoTableViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.delegate = self
         tableView.backgroundView = nil
+        tableView.tableFooterView = UIView()
         
     }
 
@@ -59,7 +60,7 @@ class RepoInfoTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToRepoDetails" {
-            var repodetailsVC = segue.destination as! RepoDetailsViewController
+            var repodetailsVC = segue.destination as! CommitsViewController
             repodetailsVC.repo = self.selectedRepo
             repodetailsVC.commits = self.commits
         }

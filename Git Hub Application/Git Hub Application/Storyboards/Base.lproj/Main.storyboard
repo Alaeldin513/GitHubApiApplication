@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-957" y="62"/>
         </scene>
-        <!--View Controller-->
+        <!--User Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Git_Hub_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UserSearchViewController" customModule="Git_Hub_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,9 +200,11 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="SSp-0D-KsO" id="NI3-u8-soK"/>
+                        <segue destination="7xf-LG-Er6" kind="unwind" identifier="segueToMainVC" unwindAction="unwindToMainVcWithSegue:" id="Bv9-Xa-ykG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6x-jj-vPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7xf-LG-Er6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1524" y="-146.17691154422789"/>
         </scene>
@@ -243,19 +245,19 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Stars: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAX-tD-ejc">
                                                             <rect key="frame" x="39" y="0.0" width="43.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Forks: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP4-6B-KS5">
                                                             <rect key="frame" x="92.5" y="0.0" width="45" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Updated on: 12/12/9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diD-T9-aIP">
                                                             <rect key="frame" x="147.5" y="0.0" width="161.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -313,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="1529" y="526"/>
         </scene>
-        <!--Repo Details View Controller-->
+        <!--Commits View Controller-->
         <scene sceneID="VXc-u0-lOP">
             <objects>
-                <viewController id="AXb-R1-8bE" customClass="RepoDetailsViewController" customModule="Git_Hub_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AXb-R1-8bE" customClass="CommitsViewController" customModule="Git_Hub_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyD-RJ-yXD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,19 +344,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-Fu-Bdo">
                                                 <rect key="frame" x="52" y="0.0" width="43.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK1-aQ-WcR">
                                                 <rect key="frame" x="118" y="0.0" width="45" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated on: 12/12/9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJq-b8-MW6">
                                                 <rect key="frame" x="186" y="0.0" width="165" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -381,7 +383,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lwp-o4-UiS">
-                                <rect key="frame" x="0.0" y="185" width="375" height="482"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commitCell" rowHeight="107" id="083-zU-e7K" customClass="CommitTableViewCell" customModule="Git_Hub_Application" customModuleProvider="target">
@@ -412,7 +414,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated on: 12/12/9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hT-Mp-5Ep">
                                                                     <rect key="frame" x="163" y="0.0" width="165" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" red="0.63921568630000003" green="0.82745098039999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -456,50 +458,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6EE-Bx-P05">
-                                <rect key="frame" x="0.0" y="155" width="375" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUh-WX-4iv">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
-                                        <state key="normal" title="Commits"/>
-                                        <connections>
-                                            <action selector="tabBarButtonPressed:" destination="AXb-R1-8bE" eventType="touchUpInside" id="Fce-EP-bZK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we1-eW-WTJ">
-                                        <rect key="frame" x="94" y="0.0" width="93.5" height="30"/>
-                                        <state key="normal" title="Branches"/>
-                                        <connections>
-                                            <action selector="tabBarButtonPressed:" destination="AXb-R1-8bE" eventType="touchUpInside" id="OQB-Uw-esg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-tI-SVr">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="30"/>
-                                        <state key="normal" title="Releases"/>
-                                        <connections>
-                                            <action selector="tabBarButtonPressed:" destination="AXb-R1-8bE" eventType="touchUpInside" id="1sv-sQ-2Dm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj1-CG-Ab2">
-                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="30"/>
-                                        <state key="normal" title="Contributors"/>
-                                        <connections>
-                                            <action selector="tabBarButtonPressed:" destination="AXb-R1-8bE" eventType="touchUpInside" id="YsB-U9-EDu"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6EE-Bx-P05" firstAttribute="top" secondItem="l3e-F6-gdX" secondAttribute="bottom" id="6rM-gZ-y7a"/>
-                            <constraint firstItem="Lwp-o4-UiS" firstAttribute="top" secondItem="6EE-Bx-P05" secondAttribute="bottom" id="Fof-Pb-qn5"/>
+                            <constraint firstItem="Lwp-o4-UiS" firstAttribute="top" secondItem="l3e-F6-gdX" secondAttribute="bottom" id="40d-Me-lmf"/>
                             <constraint firstItem="l3e-F6-gdX" firstAttribute="top" secondItem="9QJ-yE-wh2" secondAttribute="top" id="HRu-wV-nwE"/>
                             <constraint firstItem="l3e-F6-gdX" firstAttribute="trailing" secondItem="9QJ-yE-wh2" secondAttribute="trailing" id="Nz3-5N-MK5"/>
-                            <constraint firstItem="6EE-Bx-P05" firstAttribute="leading" secondItem="9QJ-yE-wh2" secondAttribute="leading" id="UAy-U4-xZR"/>
                             <constraint firstItem="Lwp-o4-UiS" firstAttribute="leading" secondItem="9QJ-yE-wh2" secondAttribute="leading" id="UaX-hT-n0P"/>
                             <constraint firstItem="l3e-F6-gdX" firstAttribute="leading" secondItem="9QJ-yE-wh2" secondAttribute="leading" id="Z6M-xQ-HGh"/>
-                            <constraint firstItem="9QJ-yE-wh2" firstAttribute="trailing" secondItem="6EE-Bx-P05" secondAttribute="trailing" id="cAQ-m4-Y6e"/>
                             <constraint firstItem="Lwp-o4-UiS" firstAttribute="trailing" secondItem="9QJ-yE-wh2" secondAttribute="trailing" id="hAr-Jn-kc1"/>
                             <constraint firstItem="Lwp-o4-UiS" firstAttribute="bottom" secondItem="9QJ-yE-wh2" secondAttribute="bottom" id="x1l-Dy-M7B"/>
                         </constraints>

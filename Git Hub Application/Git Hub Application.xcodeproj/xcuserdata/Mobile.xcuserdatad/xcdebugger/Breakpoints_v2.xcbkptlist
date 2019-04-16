@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Git Hub Application/ViewControllers/UserInfoTableViewController.swift"
-            timestampString = "577000900.080918"
+            timestampString = "577075220.4699481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Git Hub Application/ViewControllers/UserInfoTableViewController.swift"
-            timestampString = "577000900.081859"
+            timestampString = "577075220.470295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Git Hub Application/ViewControllers/UserInfoTableViewController.swift"
-            timestampString = "577000900.0823489"
+            timestampString = "577075220.470396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -76,61 +76,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Git Hub Application/ViewControllers/RepoInfoTableViewController.swift"
-            timestampString = "577000900.0828069"
+            timestampString = "577075220.470494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Git Hub Application/ViewControllers/RepoDetailsViewController.swift"
-            timestampString = "577000900.083082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Git_Hub_Application.RepoDetailsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Git Hub Application"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mobile/GitHubApiApplication/Git%20Hub%20Application/Git%20Hub%20Application/ViewControllers/RepoDetailsViewController.swift"
-                  timestampString = "576998546.281234"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "372">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Git_Hub_Application.RepoDetailsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Git Hub Application"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mobile/GitHubApiApplication/Git%20Hub%20Application/Git%20Hub%20Application/ViewControllers/RepoDetailsViewController.swift"
-                  timestampString = "576998546.283512"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "401">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

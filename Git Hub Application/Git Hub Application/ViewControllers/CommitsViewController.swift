@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CommitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var repoTitle: UILabel!
     @IBOutlet weak var repoDetails: UILabel!
@@ -27,8 +27,9 @@ class RepoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50
         updateLabels()
         // Do any additional setup after loading the view.
     }
@@ -48,60 +49,33 @@ class RepoDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch currentlyShowing {
-        case "Commits":
-            return commits.count
-        case "Branches":
-            return branches.count
-        case "Releases":
-            return releases.count
-        case "Contributors":
-            break
-        default:
-            break
-        }
-        return 0
+        return commits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "commitCell", for: indexPath) as! CommitTableViewCell
-        switch currentlyShowing {
-        case "Commits":
-            cell.configure(commit: commits[indexPath.row])
-            return cell
-        case "Branches":
-            cell.configure(commit: commits[indexPath.row])
-            return cell
-        case "Releases":
-            cell.configure(commit: commits[indexPath.row])
-            return cell
-        case "Contributors":
-            cell.configure(commit: commits[indexPath.row])
-            return cell
-        default:
-            cell.configure(commit: commits[indexPath.row])
-            return cell
-        }
+        cell.configure(commit: commits[indexPath.row])
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 10, width: tableView.frame.width, height: 30))
+            headerView.backgroundColor = .white
+            let label = UILabel()
+            label.frame = CGRect.init(x: 10, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+            label.text = "Commits"
+            label.textColor = UIColor(red: 163/255, green: 211/255, blue: 112/255, alpha: 1)
+            headerView.addSubview(label)
+            label.backgroundColor = .clear
+            label.font = UIFont.boldSystemFont(ofSize: 20)
+            return headerView
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
-    @IBAction func tabBarButtonPressed(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            self.currentlyShowing = "Commits"
-        case 1:
-            self.currentlyShowing = "Branches"
-        case 2:
-            self.currentlyShowing = "Releases"
-        case 3:
-            self.currentlyShowing = "Contributors"
-        default:
-            break
-        }
-        DispatchQueue.main.async {
-            
-        }
-    }
 }
